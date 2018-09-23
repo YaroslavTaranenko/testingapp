@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">User info: </h5>
+    </div>
+    <div class="card-body">
+      <img class="user-img" src="{{user.photo}}" />
+      <p class="card-text"><span>First name: </span>{{user.firstName}}</p>
+      <p class="card-text"><span>Last name: </span>{{user.lastName}}</p>
+      <p class="card-text"><span>Class: </span>{{user.studyClass}}</p>
+    </div>
+    <div class="card-footer text-right">
+      <button class="btn btn-info btn-md">Edit profile</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title"><a routerLink="/tasks">Test list: </a></h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="text-info">Reacent tests: </label>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let test of tests"><a routerLink="/tests/{{test.name}}">{{test.name}}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <label class="text-info">Last tests: </label>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let test of tests">{{test.name}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<app-footer></app-footer>
